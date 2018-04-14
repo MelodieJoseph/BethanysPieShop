@@ -15,6 +15,7 @@ namespace BethanysPieShop
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
+            //testing
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
