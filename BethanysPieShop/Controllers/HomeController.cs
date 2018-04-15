@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BethanysPieShop.Models;
+using BethanysPieShop.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,7 +21,17 @@ namespace BethanysPieShop.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            var pies = _pieRepository.GetAllPies().OrderBy(p => p.Name);
+
+            var homeViewModel = new HomeViewModel()
+            {
+                Title = "Welcome to Bethany's Pie SHop",
+                Pies = pies.ToList()
+            };
+
+           
+
+            return View(homeViewModel);
         }
     }
 }

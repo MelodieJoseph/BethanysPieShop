@@ -27,6 +27,6 @@ namespace BethanysPieShop
             app.UseStatusCodePages(); //showing the return codes for the status of the application
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-        }
+        } 
     }
 }
